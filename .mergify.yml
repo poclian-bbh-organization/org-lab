@@ -1,13 +1,7 @@
-queue_rules:
-  - name: default
-    queue_conditions: []
-    merge_conditions: []
-    queue_branch_prefix: "mqtest/"
-
 pull_request_rules:
-  - name: autoqueue
+  - name: merge as admin colleague
     conditions:
-      - label=queue-me
+      - label=do-merge
     actions:
-      queue:
-        name: default
+      merge:
+        merge_bot_account: "Pockriglian"
