@@ -1,0 +1,13 @@
+queue_rules:
+  - name: default
+    queue_conditions: []
+    merge_conditions: []
+    queue_branch_prefix: "mqtest/"
+
+pull_request_rules:
+  - name: autoqueue
+    conditions:
+      - label=queue-me
+    actions:
+      queue:
+        name: default
